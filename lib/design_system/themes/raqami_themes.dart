@@ -1,0 +1,76 @@
+import 'package:design_system/design_system/foundation/color_palette.dart';
+import 'package:design_system/design_system/foundation/font_size.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../components/design_buttons/button_colors.dart';
+
+class RaqamiThemes {
+
+  ThemeData lightTheme = ThemeData(
+    scaffoldBackgroundColor: Colors.white,
+    colorScheme: ColorScheme.fromSwatch(
+      // primarySwatch: Colors.indigo,
+      brightness: Brightness.light,
+    ),
+    appBarTheme: const AppBarTheme(
+      color: ColorPalette.sBlueGreyColor,
+      elevation: 1,
+    ),
+    fontFamily: GoogleFonts.quicksand().fontFamily,
+    textTheme: GoogleFonts.quicksandTextTheme().copyWith(
+      bodyMedium: const TextStyle(color: Colors.black, fontSize: FontSize.m, fontWeight: FontWeight.w400),
+    ),
+    extensions: const <ThemeExtension<dynamic>>[
+      SpecialButtonColor(
+        color: ColorPalette.specialButtonColorL,
+      ),
+      PrimaryButtonColor(
+        color: ColorPalette.pBlackColor,
+      ),
+      SecondaryButtonColor(
+        color: ColorPalette.pBlackColor,
+      ),
+      TertiaryButtonColor(
+        color: ColorPalette.pBlackColor,
+      ),
+      DisabledButtonColor(
+        color: ColorPalette.pGray40Color,
+        labelColor: ColorPalette.pWhiteColor,
+      ),
+    ],
+  );
+
+  ThemeData darkTheme = ThemeData(
+    scaffoldBackgroundColor: ColorPalette.pGray100Color,
+    colorScheme: ColorScheme.fromSwatch(
+      // primarySwatch: Colors.indigo,
+      brightness: Brightness.dark,
+    ),
+    appBarTheme: const AppBarTheme(
+      color: ColorPalette.pGray100Color,
+      elevation: 1,
+    ),
+    fontFamily: GoogleFonts.quicksand().fontFamily,
+    textTheme: GoogleFonts.quicksandTextTheme().copyWith(
+      bodyMedium: const TextStyle(color: Colors.white, fontSize: FontSize.m, fontWeight: FontWeight.w400),
+    ),
+    extensions: const <ThemeExtension<dynamic>>[
+      SpecialButtonColor(
+        color: ColorPalette.specialButtonColorD,
+      ),
+      PrimaryButtonColor(
+        color: ColorPalette.primaryButtonColorD,
+      ),
+      SecondaryButtonColor(
+        color: ColorPalette.specialButtonColorD,
+      ),
+      TertiaryButtonColor(
+        color: ColorPalette.blueColor,
+      ),
+      DisabledButtonColor(
+        color: ColorPalette.disabledButtonColorD,
+        labelColor: ColorPalette.disabledButtonTextColor,
+      ),
+    ],
+  );
+}
