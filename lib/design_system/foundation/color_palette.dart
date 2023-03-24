@@ -40,6 +40,14 @@ class ColorPalette {
   static const blueColor = Color(0XFF2F80ED);
   static const disabledButtonTextColor = Color(0XFF90989E);
 
+  ///Text field colors
+  static const blackColor = Color(0XFF202020);
+  static const greyColor = Color(0XFF82888C);
+  static const redColor = Color(0XFFD95D39);
+  static const noteColorD = Color(0XFF6D7982);
+  static const focusedBorderColorD = Color(0XFFC9D3DC);
+  static const dropDownIconColorD = Color(0XFFC7CBCE);
+
 
 
 

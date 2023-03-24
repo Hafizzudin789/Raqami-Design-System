@@ -16,13 +16,18 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider<ThemeProvider>(
       create: (_) => ThemeProvider(),
       builder: (context, theme) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Raqami Design system',
-          theme: RaqamiThemes().lightTheme,
-          darkTheme: RaqamiThemes().darkTheme,
-          themeMode: context.watch<ThemeProvider>().themeMode,
-          home: const ExampleView(),
+        return GestureDetector(
+          onTap: () {
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Raqami Design system',
+            theme: RaqamiThemes().lightTheme,
+            darkTheme: RaqamiThemes().darkTheme,
+            themeMode: context.watch<ThemeProvider>().themeMode,
+            home: const ExampleView(),
+          ),
         );
       },
     );

@@ -3,7 +3,10 @@ import 'package:design_system/design_system/components/design_buttons/primary_bu
 import 'package:design_system/design_system/components/design_buttons/secondary_button.dart';
 import 'package:design_system/design_system/components/design_buttons/special_button.dart';
 import 'package:design_system/design_system/components/design_buttons/tertiary_button.dart';
+import 'package:design_system/design_system/components/design_dropdown_fields/primary_drown_down_field.dart';
+import 'package:design_system/design_system/components/design_text_fields/primary_text_field.dart';
 import 'package:design_system/design_system/foundation/ui_helpers.dart';
+import 'package:design_system/design_system/raqami_assets/raqami_flags.dart';
 import 'package:design_system/design_system/raqami_assets/raqami_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -65,6 +68,30 @@ class _ExampleViewState extends State<ExampleView> {
           const Text("Disabled Button", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
           verticalSpaceSmall,
           ..._disabledButtons,
+
+          const Text("Text Field Without Note", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
+          verticalSpaceSmall,
+          ..._textFieldsWithoutNote,
+
+          const Text("Text Field With Note", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
+          verticalSpaceSmall,
+          ..._textFieldsWithNote,
+
+          const Text("Dropdown Without Note", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
+          verticalSpaceSmall,
+          ..._dropDownWithoutNote,
+
+          const Text("Dropdown With Note", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
+          verticalSpaceSmall,
+          ..._dropDownWithNote,
+
+          const Text("Dropdown Without Note With Flag", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
+          verticalSpaceSmall,
+          ..._dropDownWithoutNoteFlag,
+
+          const Text("Dropdown With Note With Flag", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
+          verticalSpaceSmall,
+          ..._dropDownWithNoteFlag,
         ],
       ),
     );
@@ -243,6 +270,78 @@ class _ExampleViewState extends State<ExampleView> {
         Expanded(child: DisabledButton.l(label: "Button", icon: RaqamiIcons.add,)),
       ],
     ),
+    verticalSpaceXXXLarge,
+  ];
+
+  List<Widget> get _textFieldsWithoutNote => [
+    const PrimaryTextField(hint: "Hint", label: "Label"),
+    verticalSpaceXXxXLarge,
+    verticalSpaceXXxXLarge,
+    const PrimaryTextField(hint: "Hint", label: "Label", isEnabled: false),
+    verticalSpaceXXxXLarge,
+    verticalSpaceXXxXLarge,
+    const PrimaryTextField(hint: "Hint", label: "Label", hasError: true),
+    verticalSpaceXXxXLarge,
+    verticalSpaceXXxXLarge,
+  ];
+
+  List<Widget> get _textFieldsWithNote => [
+    const PrimaryTextField(hint: "Hint", label: "Label", note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
+    verticalSpaceXXxXLarge,
+    verticalSpaceXXxXLarge,
+    const PrimaryTextField(hint: "Hint", label: "Label", isEnabled: false, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
+    verticalSpaceXXxXLarge,
+    verticalSpaceXXxXLarge,
+    const PrimaryTextField(hint: "Hint", label: "Label", hasError: true, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
+    verticalSpaceXXXLarge,
+    verticalSpaceXXXLarge,
+  ];
+
+  List<Widget> get _dropDownWithNote => [
+    const PrimaryDropDownField(hint: "Hint", label: "Label", note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
+    verticalSpaceXXxXLarge,
+    verticalSpaceXXxXLarge,
+    const PrimaryDropDownField(hint: "Hint", label: "Label", isEnabled: false, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
+    verticalSpaceXXxXLarge,
+    verticalSpaceXXxXLarge,
+    const PrimaryDropDownField(hint: "Hint", label: "Label", hasError: true, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
+    verticalSpaceXXXLarge,
+    verticalSpaceXXXLarge,
+  ];
+
+  List<Widget> get _dropDownWithoutNote => [
+    const PrimaryDropDownField(hint: "Hint", label: "Label"),
+    verticalSpaceXXxXLarge,
+    verticalSpaceXXxXLarge,
+    const PrimaryDropDownField(hint: "Hint", label: "Label", isEnabled: false),
+    verticalSpaceXXxXLarge,
+    verticalSpaceXXxXLarge,
+    const PrimaryDropDownField(hint: "Hint", label: "Label", hasError: true),
+    verticalSpaceXXXLarge,
+    verticalSpaceXXXLarge,
+  ];
+
+  List<Widget> get _dropDownWithNoteFlag => [
+    const PrimaryDropDownField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
+    verticalSpaceXXxXLarge,
+    verticalSpaceXXxXLarge,
+    const PrimaryDropDownField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, isEnabled: false, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
+    verticalSpaceXXxXLarge,
+    verticalSpaceXXxXLarge,
+    const PrimaryDropDownField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, hasError: true, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
+    verticalSpaceXXXLarge,
+    verticalSpaceXXXLarge,
+  ];
+
+  List<Widget> get _dropDownWithoutNoteFlag => [
+    const PrimaryDropDownField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, ),
+    verticalSpaceXXxXLarge,
+    verticalSpaceXXxXLarge,
+    const PrimaryDropDownField(hint: "Hint", label: "Label", isEnabled: false, prefixImagePath: RaqamiFlags.pakistan, ),
+    verticalSpaceXXxXLarge,
+    verticalSpaceXXxXLarge,
+    const PrimaryDropDownField(hint: "Hint", label: "Label", hasError: true, prefixImagePath: RaqamiFlags.pakistan, ),
+    verticalSpaceXXXLarge,
     verticalSpaceXXXLarge,
   ];
 }

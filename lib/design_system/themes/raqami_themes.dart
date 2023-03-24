@@ -1,8 +1,10 @@
+import 'package:design_system/design_system/components/design_dropdown_fields/drop_down_field_color.dart';
 import 'package:design_system/design_system/foundation/color_palette.dart';
 import 'package:design_system/design_system/foundation/font_size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../components/design_buttons/button_colors.dart';
+import '../components/design_text_fields/text_field_colors.dart';
 
 class RaqamiThemes {
 
@@ -37,6 +39,35 @@ class RaqamiThemes {
         color: ColorPalette.pGray40Color,
         labelColor: ColorPalette.pWhiteColor,
       ),
+
+
+      PrimaryTextFieldColor(
+        labelColor: ColorPalette.pGray80Color,
+        hintColor: ColorPalette.greyColor,
+        disableHintColor: ColorPalette.pGray50Color,
+        // textColor: ColorPalette.pGray80Color,
+        textColor: ColorPalette.pGray100Color,
+        noteColor: ColorPalette.pGray60Color,
+
+        enableBorderColor: ColorPalette.pGray40Color,
+        focusedBorderColor: ColorPalette.blackColor,
+        disableBorderColor: ColorPalette.pGray20Color,
+      ),
+      DropDownFieldColor(
+        labelColor: ColorPalette.pGray80Color,
+        hintColor: ColorPalette.greyColor,
+        disableHintColor: ColorPalette.pGray50Color,
+        // textColor: ColorPalette.pGray80Color,
+        textColor: ColorPalette.pGray100Color,
+        noteColor: ColorPalette.pGray60Color,
+
+        enableBorderColor: ColorPalette.pGray40Color,
+        focusedBorderColor: ColorPalette.blackColor,
+        disableBorderColor: ColorPalette.pGray20Color,
+
+        arrowColor: ColorPalette.pBlackColor,
+        disableArrowColor: ColorPalette.disabledButtonTextColor,
+      ),
     ],
   );
 
@@ -70,6 +101,33 @@ class RaqamiThemes {
       DisabledButtonColor(
         color: ColorPalette.disabledButtonColorD,
         labelColor: ColorPalette.disabledButtonTextColor,
+      ),
+
+
+      PrimaryTextFieldColor(
+        labelColor: ColorPalette.specialButtonColorD,
+        hintColor: ColorPalette.noteColorD,
+        disableHintColor: ColorPalette.pGray80Color,
+        textColor: ColorPalette.pWhiteColor,
+        noteColor: ColorPalette.noteColorD,
+
+        enableBorderColor: ColorPalette.pGray80Color,
+        focusedBorderColor: ColorPalette.focusedBorderColorD,
+        disableBorderColor: ColorPalette.pGray80Color,
+      ),
+      DropDownFieldColor(
+        labelColor: ColorPalette.specialButtonColorD,
+        hintColor: ColorPalette.noteColorD,
+        disableHintColor: ColorPalette.pGray80Color,
+        textColor: ColorPalette.pWhiteColor,
+        noteColor: ColorPalette.noteColorD,
+
+        enableBorderColor: ColorPalette.pGray80Color,
+        focusedBorderColor: ColorPalette.focusedBorderColorD,
+        disableBorderColor: ColorPalette.pGray80Color,
+
+        arrowColor: ColorPalette.dropDownIconColorD,
+        disableArrowColor: ColorPalette.pGray80Color,
       ),
     ],
   );
