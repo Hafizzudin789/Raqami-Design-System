@@ -20,7 +20,7 @@ const Widget verticalSpaceLarge = SizedBox(height: 20.0);
 const Widget verticalSpaceXLarge = SizedBox(height: 24.0);
 const Widget verticalSpaceXXLarge = SizedBox(height: 28.0);
 const Widget verticalSpaceXXXLarge = SizedBox(height: 32.0);
-const Widget verticalSpaceXXxXLarge = SizedBox(height: 36.0);
+const Widget verticalSpaceXXXXLarge = SizedBox(height: 36.0);
 
 
 ///Screen size helpers

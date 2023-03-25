@@ -39,16 +39,16 @@ class PrimaryDropDownField extends StatelessWidget {
                 : dropDownFieldColor.disableHintColor, fontSize: FontSize.l, fontWeight: FontWeight.w400),
             enabled: isEnabled,
             enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: hasError ? ColorPalette.redColor: dropDownFieldColor.enableBorderColor!),
+              borderSide: BorderSide(color: hasError ? ColorPalette.errorRedColor: dropDownFieldColor.enableBorderColor!),
             ),
             focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: hasError ? ColorPalette.redColor: dropDownFieldColor.focusedBorderColor!),
+              borderSide: BorderSide(color: hasError ? ColorPalette.errorRedColor: dropDownFieldColor.focusedBorderColor!),
             ),
             disabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: dropDownFieldColor.disableBorderColor!),
             ),
             errorBorder: const UnderlineInputBorder(
-              borderSide: BorderSide(color: ColorPalette.redColor),
+              borderSide: BorderSide(color: ColorPalette.errorRedColor),
             ),
             prefixIconConstraints: const BoxConstraints(
               minHeight: 24,
@@ -77,7 +77,7 @@ class PrimaryDropDownField extends StatelessWidget {
                 child: Text(
                   note!,
                   style: TextStyle(
-                    color: hasError ? ColorPalette.redColor : dropDownFieldColor.noteColor,
+                    color: hasError ? ColorPalette.errorRedColor : dropDownFieldColor.noteColor,
                     fontSize: FontSize.s,
                     fontWeight: FontWeight.w400,
                     height: 1.4,

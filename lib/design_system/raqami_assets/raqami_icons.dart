@@ -6,4 +6,7 @@ class RaqamiIcons {
   static const String roundedPlus = "assets/icons/roundedPlus.svg";
   static const String dropDown = "assets/icons/dropDown.svg";
   static const String search = "assets/icons/search.svg";
+  static const String success = "assets/icons/success.svg";
+  static const String warning = "assets/icons/warning.svg";
+  static const String error = "assets/icons/error.svg";
 }

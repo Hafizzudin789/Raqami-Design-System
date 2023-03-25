@@ -43,10 +43,16 @@ class ColorPalette {
   ///Text field colors
   static const blackColor = Color(0XFF202020);
   static const greyColor = Color(0XFF82888C);
-  static const redColor = Color(0XFFD95D39);
+  static const errorRedColor = Color(0XFFD95D39);
   static const noteColorD = Color(0XFF6D7982);
   static const focusedBorderColorD = Color(0XFFC9D3DC);
   static const dropDownIconColorD = Color(0XFFC7CBCE);
+
+  static const greenColor = Color(0XFF449857);
+  static const yellowColor = Color(0XFFFCBE62);
+  static const redColor = Color(0XFFEB5757);
+
+  static const lightWhiteColor = Color(0XFFF2F2F2);
 
 
 

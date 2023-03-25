@@ -35,16 +35,16 @@ class PrimaryTextField extends StatelessWidget {
                 : primaryTextFieldColor.disableHintColor, fontSize: FontSize.l, fontWeight: FontWeight.w400),
             enabled: isEnabled,
             enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: hasError ? ColorPalette.redColor: primaryTextFieldColor.enableBorderColor??ColorPalette.blackColor),
+              borderSide: BorderSide(color: hasError ? ColorPalette.errorRedColor: primaryTextFieldColor.enableBorderColor??ColorPalette.blackColor),
             ),
             focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: hasError ? ColorPalette.redColor: primaryTextFieldColor.focusedBorderColor??ColorPalette.blackColor),
+              borderSide: BorderSide(color: hasError ? ColorPalette.errorRedColor: primaryTextFieldColor.focusedBorderColor??ColorPalette.blackColor),
             ),
             disabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: primaryTextFieldColor.disableBorderColor?? ColorPalette.blackColor),
             ),
             errorBorder: const UnderlineInputBorder(
-              borderSide: BorderSide(color: ColorPalette.redColor),
+              borderSide: BorderSide(color: ColorPalette.errorRedColor),
             ),
           ),
         ),
@@ -54,7 +54,7 @@ class PrimaryTextField extends StatelessWidget {
                 child: Text(
                   note!,
                   style: TextStyle(
-                    color: hasError ? ColorPalette.redColor : primaryTextFieldColor.noteColor,
+                    color: hasError ? ColorPalette.errorRedColor : primaryTextFieldColor.noteColor,
                     fontSize: FontSize.s,
                     fontWeight: FontWeight.w400,
                     height: 1.4,

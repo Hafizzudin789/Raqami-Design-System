@@ -6,6 +6,7 @@ import 'package:design_system/design_system/components/design_buttons/tertiary_b
 import 'package:design_system/design_system/components/design_dropdown_fields/primary_drown_down_field.dart';
 import 'package:design_system/design_system/components/design_search_box/primary_search_box.dart';
 import 'package:design_system/design_system/components/design_text_fields/primary_text_field.dart';
+import 'package:design_system/design_system/components/design_toast_message.dart';
 import 'package:design_system/design_system/foundation/ui_helpers.dart';
 import 'package:design_system/design_system/raqami_assets/raqami_flags.dart';
 import 'package:design_system/design_system/raqami_assets/raqami_icons.dart';
@@ -97,6 +98,10 @@ class _ExampleViewState extends State<ExampleView> {
           const Text("Search box", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
           verticalSpaceSmall,
           ..._searchBox,
+
+          const Text("Toast messages", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
+          verticalSpaceSmall,
+          ..._toastMessage,
         ],
       ),
     );
@@ -280,23 +285,23 @@ class _ExampleViewState extends State<ExampleView> {
 
   List<Widget> get _textFieldsWithoutNote => [
     const PrimaryTextField(hint: "Hint", label: "Label"),
-    verticalSpaceXXxXLarge,
-    verticalSpaceXXxXLarge,
+    verticalSpaceXXXXLarge,
+    verticalSpaceXXXXLarge,
     const PrimaryTextField(hint: "Hint", label: "Label", isEnabled: false),
-    verticalSpaceXXxXLarge,
-    verticalSpaceXXxXLarge,
+    verticalSpaceXXXXLarge,
+    verticalSpaceXXXXLarge,
     const PrimaryTextField(hint: "Hint", label: "Label", hasError: true),
-    verticalSpaceXXxXLarge,
-    verticalSpaceXXxXLarge,
+    verticalSpaceXXXXLarge,
+    verticalSpaceXXXXLarge,
   ];
 
   List<Widget> get _textFieldsWithNote => [
     const PrimaryTextField(hint: "Hint", label: "Label", note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
-    verticalSpaceXXxXLarge,
-    verticalSpaceXXxXLarge,
+    verticalSpaceXXXXLarge,
+    verticalSpaceXXXXLarge,
     const PrimaryTextField(hint: "Hint", label: "Label", isEnabled: false, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
-    verticalSpaceXXxXLarge,
-    verticalSpaceXXxXLarge,
+    verticalSpaceXXXXLarge,
+    verticalSpaceXXXXLarge,
     const PrimaryTextField(hint: "Hint", label: "Label", hasError: true, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
     verticalSpaceXXXLarge,
     verticalSpaceXXXLarge,
@@ -304,11 +309,11 @@ class _ExampleViewState extends State<ExampleView> {
 
   List<Widget> get _dropDownWithNote => [
     const PrimaryDropDownField(hint: "Hint", label: "Label", note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
-    verticalSpaceXXxXLarge,
-    verticalSpaceXXxXLarge,
+    verticalSpaceXXXXLarge,
+    verticalSpaceXXXXLarge,
     const PrimaryDropDownField(hint: "Hint", label: "Label", isEnabled: false, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
-    verticalSpaceXXxXLarge,
-    verticalSpaceXXxXLarge,
+    verticalSpaceXXXXLarge,
+    verticalSpaceXXXXLarge,
     const PrimaryDropDownField(hint: "Hint", label: "Label", hasError: true, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
     verticalSpaceXXXLarge,
     verticalSpaceXXXLarge,
@@ -316,11 +321,11 @@ class _ExampleViewState extends State<ExampleView> {
 
   List<Widget> get _dropDownWithoutNote => [
     const PrimaryDropDownField(hint: "Hint", label: "Label"),
-    verticalSpaceXXxXLarge,
-    verticalSpaceXXxXLarge,
+    verticalSpaceXXXXLarge,
+    verticalSpaceXXXXLarge,
     const PrimaryDropDownField(hint: "Hint", label: "Label", isEnabled: false),
-    verticalSpaceXXxXLarge,
-    verticalSpaceXXxXLarge,
+    verticalSpaceXXXXLarge,
+    verticalSpaceXXXXLarge,
     const PrimaryDropDownField(hint: "Hint", label: "Label", hasError: true),
     verticalSpaceXXXLarge,
     verticalSpaceXXXLarge,
@@ -328,11 +333,11 @@ class _ExampleViewState extends State<ExampleView> {
 
   List<Widget> get _dropDownWithNoteFlag => [
     const PrimaryDropDownField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
-    verticalSpaceXXxXLarge,
-    verticalSpaceXXxXLarge,
+    verticalSpaceXXXXLarge,
+    verticalSpaceXXXXLarge,
     const PrimaryDropDownField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, isEnabled: false, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
-    verticalSpaceXXxXLarge,
-    verticalSpaceXXxXLarge,
+    verticalSpaceXXXXLarge,
+    verticalSpaceXXXXLarge,
     const PrimaryDropDownField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, hasError: true, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
     verticalSpaceXXXLarge,
     verticalSpaceXXXLarge,
@@ -340,11 +345,11 @@ class _ExampleViewState extends State<ExampleView> {
 
   List<Widget> get _dropDownWithoutNoteFlag => [
     const PrimaryDropDownField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, ),
-    verticalSpaceXXxXLarge,
-    verticalSpaceXXxXLarge,
+    verticalSpaceXXXXLarge,
+    verticalSpaceXXXXLarge,
     const PrimaryDropDownField(hint: "Hint", label: "Label", isEnabled: false, prefixImagePath: RaqamiFlags.pakistan, ),
-    verticalSpaceXXxXLarge,
-    verticalSpaceXXxXLarge,
+    verticalSpaceXXXXLarge,
+    verticalSpaceXXXXLarge,
     const PrimaryDropDownField(hint: "Hint", label: "Label", hasError: true, prefixImagePath: RaqamiFlags.pakistan, ),
     verticalSpaceXXXLarge,
     verticalSpaceXXXLarge,
@@ -352,8 +357,39 @@ class _ExampleViewState extends State<ExampleView> {
 
   List<Widget> get _searchBox => [
     const PrimarySearchBox(hint: "Search"),
-    verticalSpaceXXxXLarge,
+    verticalSpaceXXXXLarge,
     const PrimarySearchBox(hint: "Search", isEnabled: false),
-    verticalSpaceXXxXLarge,
+    verticalSpaceXXXXLarge,
+  ];
+
+  List<Widget> get _toastMessage => [
+    PrimaryButton.s(
+      label: "Toast success message",
+      onPressed: () {
+        ToastMessage.success(
+          context,
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis nunc purus.",
+        ).show();
+      },
+    ),
+    verticalSpaceRegular,
+    PrimaryButton.s(
+      label: "Toast warning message",
+      onPressed: () {
+        ToastMessage.warning(context,
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis nunc purus.")
+            .show();
+      },
+    ),
+    verticalSpaceRegular,
+    PrimaryButton.s(
+      label: "Toast error message",
+      onPressed: () {
+        ToastMessage.error(context,
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis nunc purus.")
+            .show();
+      },
+    ),
+    verticalSpaceRegular,
   ];
 }
