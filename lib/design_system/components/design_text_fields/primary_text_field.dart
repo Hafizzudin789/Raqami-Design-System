@@ -9,7 +9,9 @@ class PrimaryTextField extends StatelessWidget {
   final String? note;
   final bool isEnabled;
   final bool hasError;
-  const PrimaryTextField({Key? key, required this.hint, required this.label, this.note, this.isEnabled = true, this.hasError = false}) : super(key: key);
+  final TextEditingController? controller;
+  const PrimaryTextField({Key? key, required this.hint, required this.label, this.note,
+    this.isEnabled = true, this.hasError = false, this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +24,7 @@ class PrimaryTextField extends StatelessWidget {
           child: Text(label, style: TextStyle(fontSize: FontSize.m, fontWeight: FontWeight.w400, color: isEnabled?primaryTextFieldColor.labelColor: primaryTextFieldColor.disableHintColor),),
         ),
         TextField(
+          controller: controller,
           cursorColor: primaryTextFieldColor.focusedBorderColor,
           style: TextStyle(color: primaryTextFieldColor.textColor, fontSize: FontSize.l, fontWeight: FontWeight.w400),
           decoration: InputDecoration(
@@ -32,13 +35,13 @@ class PrimaryTextField extends StatelessWidget {
                 : primaryTextFieldColor.disableHintColor, fontSize: FontSize.l, fontWeight: FontWeight.w400),
             enabled: isEnabled,
             enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: hasError ? ColorPalette.redColor: primaryTextFieldColor.enableBorderColor!),
+              borderSide: BorderSide(color: hasError ? ColorPalette.redColor: primaryTextFieldColor.enableBorderColor??ColorPalette.blackColor),
             ),
             focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: hasError ? ColorPalette.redColor: primaryTextFieldColor.focusedBorderColor!),
+              borderSide: BorderSide(color: hasError ? ColorPalette.redColor: primaryTextFieldColor.focusedBorderColor??ColorPalette.blackColor),
             ),
             disabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: primaryTextFieldColor.disableBorderColor!),
+              borderSide: BorderSide(color: primaryTextFieldColor.disableBorderColor?? ColorPalette.blackColor),
             ),
             errorBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: ColorPalette.redColor),

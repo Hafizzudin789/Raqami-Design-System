@@ -27,6 +27,7 @@ class PrimaryDropDownField extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Text(label, style: TextStyle(fontSize: FontSize.m, fontWeight: FontWeight.w400, color: isEnabled?dropDownFieldColor.labelColor: dropDownFieldColor.disableHintColor),),
         ),
+        //TODO: add dropdown
         TextField(
           cursorColor: dropDownFieldColor.focusedBorderColor,
           style: TextStyle(color: dropDownFieldColor.textColor, fontSize: FontSize.l, fontWeight: FontWeight.w400),

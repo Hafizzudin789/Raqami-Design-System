@@ -4,6 +4,7 @@ import 'package:design_system/design_system/components/design_buttons/secondary_
 import 'package:design_system/design_system/components/design_buttons/special_button.dart';
 import 'package:design_system/design_system/components/design_buttons/tertiary_button.dart';
 import 'package:design_system/design_system/components/design_dropdown_fields/primary_drown_down_field.dart';
+import 'package:design_system/design_system/components/design_search_box/primary_search_box.dart';
 import 'package:design_system/design_system/components/design_text_fields/primary_text_field.dart';
 import 'package:design_system/design_system/foundation/ui_helpers.dart';
 import 'package:design_system/design_system/raqami_assets/raqami_flags.dart';
@@ -92,6 +93,10 @@ class _ExampleViewState extends State<ExampleView> {
           const Text("Dropdown With Note With Flag", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
           verticalSpaceSmall,
           ..._dropDownWithNoteFlag,
+
+          const Text("Search box", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
+          verticalSpaceSmall,
+          ..._searchBox,
         ],
       ),
     );
@@ -343,5 +348,12 @@ class _ExampleViewState extends State<ExampleView> {
     const PrimaryDropDownField(hint: "Hint", label: "Label", hasError: true, prefixImagePath: RaqamiFlags.pakistan, ),
     verticalSpaceXXXLarge,
     verticalSpaceXXXLarge,
+  ];
+
+  List<Widget> get _searchBox => [
+    const PrimarySearchBox(hint: "Search"),
+    verticalSpaceXXxXLarge,
+    const PrimarySearchBox(hint: "Search", isEnabled: false),
+    verticalSpaceXXxXLarge,
   ];
 }
