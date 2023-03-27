@@ -15,8 +15,9 @@ class RaqamiThemes {
       brightness: Brightness.light,
     ),
     appBarTheme: const AppBarTheme(
-      color: ColorPalette.sBlueGreyColor,
-      elevation: 1,
+      foregroundColor: Colors.black,
+      backgroundColor: Colors.white,
+      elevation: 0,
     ),
     fontFamily: GoogleFonts.quicksand().fontFamily,
     textTheme: GoogleFonts.quicksandTextTheme().copyWith(
@@ -78,8 +79,9 @@ class RaqamiThemes {
       brightness: Brightness.dark,
     ),
     appBarTheme: const AppBarTheme(
-      color: ColorPalette.pGray100Color,
-      elevation: 1,
+      foregroundColor: Colors.white,
+      backgroundColor: Colors.black,
+      elevation: 0,
     ),
     fontFamily: GoogleFonts.quicksand().fontFamily,
     textTheme: GoogleFonts.quicksandTextTheme().copyWith(

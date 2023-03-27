@@ -12,17 +12,19 @@ import 'package:design_system/design_system/raqami_assets/raqami_flags.dart';
 import 'package:design_system/design_system/raqami_assets/raqami_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'design_system/foundation/font_size.dart';
-import 'design_system/themes/theme_provider.dart';
+import '../design_system/components/design_header.dart';
+import '../design_system/foundation/color_palette.dart';
+import '../design_system/foundation/font_size.dart';
+import '../design_system/themes/theme_provider.dart';
 
-class ExampleView extends StatefulWidget {
-  const ExampleView({Key? key}) : super(key: key);
+class AllComponentsUi extends StatefulWidget {
+  const AllComponentsUi({Key? key}) : super(key: key);
 
   @override
-  State<ExampleView> createState() => _ExampleViewState();
+  State<AllComponentsUi> createState() => _AllComponentsUiState();
 }
 
-class _ExampleViewState extends State<ExampleView> {
+class _AllComponentsUiState extends State<AllComponentsUi> {
   @override
   Widget build(BuildContext context) {
 
@@ -34,6 +36,10 @@ class _ExampleViewState extends State<ExampleView> {
             return AppBar(
               title: const Text('Raqami Design system', style: TextStyle(fontSize: FontSize.xxxl),),
               centerTitle: false,
+              backgroundColor: themeProvider.themeMode == ThemeMode.light
+                  ? ColorPalette.sBlueGreyColor
+                  : ColorPalette.pGray100Color,
+              elevation: 1,
               actions: [
                 IconButton(
                   onPressed: () {
@@ -102,6 +108,14 @@ class _ExampleViewState extends State<ExampleView> {
           const Text("Toast messages", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
           verticalSpaceSmall,
           ..._toastMessage,
+
+          const Text("Headers", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
+          verticalSpaceSmall,
+          ..._header,
+
+          // const Text("Toggle button", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
+          // verticalSpaceSmall,
+          // ..._toggleButton,
         ],
       ),
     );
@@ -390,6 +404,34 @@ class _ExampleViewState extends State<ExampleView> {
             .show();
       },
     ),
-    verticalSpaceRegular,
+    verticalSpaceXXXLarge,
   ];
+
+  List<Widget> get _header => [
+    DesignHeader(
+      title: "TitleHeader",
+      hasLeadingArrowBackButton: true,
+      hasTrailingCloseButton: true,
+      onPressedArrow: () {},
+      onPressedClose: () {},
+    ),
+    verticalSpaceRegular,
+    DesignHeader(title: "TitleHeader", hasLeadingArrowBackButton: true, onPressedArrow: () {},),
+    verticalSpaceRegular,
+    DesignHeader(title: "TitleHeader", hasTrailingCloseButton: true, onPressedClose: () {},),
+    verticalSpaceRegular,
+    DesignHeader(
+      title: "TitleHeader",
+      hasLeadingArrowBackButton: true,
+      hasTrailingCloseButton: true,
+      isStepper: true,
+      onPressedArrow: () {},
+      onPressedClose: () {},
+    ),
+    verticalSpaceXXXLarge,
+  ];
+  // List<Widget> get _toggleButton => [
+  //   PrimaryToggleButton(),
+  //   verticalSpaceRegular,
+  // ];
 }

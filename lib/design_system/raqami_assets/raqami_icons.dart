@@ -9,4 +9,6 @@ class RaqamiIcons {
   static const String success = "assets/icons/success.svg";
   static const String warning = "assets/icons/warning.svg";
   static const String error = "assets/icons/error.svg";
+  static const String close = "assets/icons/close.svg";
+  static const String arrowBack = "assets/icons/arrowBack.svg";
 }

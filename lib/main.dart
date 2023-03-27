@@ -1,8 +1,8 @@
-import 'package:design_system/example_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'design_system/themes/raqami_themes.dart';
 import 'design_system/themes/theme_provider.dart';
+import 'example/all_components_ui.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
             theme: RaqamiThemes().lightTheme,
             darkTheme: RaqamiThemes().darkTheme,
             themeMode: context.watch<ThemeProvider>().themeMode,
-            home: const ExampleView(),
+            home: const AllComponentsUi(),
           ),
         );
       },

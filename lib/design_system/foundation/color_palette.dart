@@ -49,6 +49,7 @@ class ColorPalette {
   static const dropDownIconColorD = Color(0XFFC7CBCE);
 
   static const greenColor = Color(0XFF449857);
+  static const accentGreenColor = Color(0XFF2F976A);
   static const yellowColor = Color(0XFFFCBE62);
   static const redColor = Color(0XFFEB5757);
 
