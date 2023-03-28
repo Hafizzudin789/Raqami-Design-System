@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DropDownFieldColor extends ThemeExtension<DropDownFieldColor>{
+class DropDownTextFieldThemeColor extends ThemeExtension<DropDownTextFieldThemeColor>{
   final Color? labelColor;
   final Color? hintColor;
   final Color? disableHintColor;
@@ -16,14 +16,14 @@ class DropDownFieldColor extends ThemeExtension<DropDownFieldColor>{
 
 
 
-  const DropDownFieldColor({
+  const DropDownTextFieldThemeColor({
     this.labelColor, this.hintColor, this.disableHintColor, this.textColor, this.noteColor,
     this.disableBorderColor, this.enableBorderColor, this.focusedBorderColor, this.arrowColor, this.disableArrowColor
   });
 
   @override
-  ThemeExtension<DropDownFieldColor> copyWith() {
-    return DropDownFieldColor(labelColor: labelColor, textColor: textColor, hintColor: hintColor,
+  ThemeExtension<DropDownTextFieldThemeColor> copyWith() {
+    return DropDownTextFieldThemeColor(labelColor: labelColor, textColor: textColor, hintColor: hintColor,
       noteColor: noteColor, disableHintColor: disableHintColor,
       disableBorderColor: disableBorderColor, enableBorderColor: enableBorderColor, focusedBorderColor: focusedBorderColor,
       arrowColor: arrowColor, disableArrowColor: disableArrowColor,
@@ -31,11 +31,11 @@ class DropDownFieldColor extends ThemeExtension<DropDownFieldColor>{
   }
 
   @override
-  ThemeExtension<DropDownFieldColor> lerp(covariant ThemeExtension<DropDownFieldColor>? other, double t) {
-    if (other is! DropDownFieldColor) {
+  ThemeExtension<DropDownTextFieldThemeColor> lerp(covariant ThemeExtension<DropDownTextFieldThemeColor>? other, double t) {
+    if (other is! DropDownTextFieldThemeColor) {
       return this;
     }
-    return DropDownFieldColor(
+    return DropDownTextFieldThemeColor(
       labelColor: Color.lerp(labelColor, other.labelColor, t),
       hintColor: Color.lerp(hintColor, other.hintColor, t),
       disableHintColor: Color.lerp(disableHintColor, other.disableHintColor, t),

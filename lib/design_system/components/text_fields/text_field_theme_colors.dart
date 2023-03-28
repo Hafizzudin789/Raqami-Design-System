@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class PrimaryTextFieldColor extends ThemeExtension<PrimaryTextFieldColor>{
+class TextFieldThemeColor extends ThemeExtension<TextFieldThemeColor>{
   final Color? labelColor;
   final Color? hintColor;
   final Color? disableHintColor;
@@ -13,25 +13,25 @@ class PrimaryTextFieldColor extends ThemeExtension<PrimaryTextFieldColor>{
 
 
 
-  const PrimaryTextFieldColor({
+  const TextFieldThemeColor({
     this.labelColor, this.hintColor, this.disableHintColor, this.textColor, this.noteColor,
     this.disableBorderColor, this.enableBorderColor, this.focusedBorderColor,
   });
 
   @override
-  ThemeExtension<PrimaryTextFieldColor> copyWith() {
-    return PrimaryTextFieldColor(labelColor: labelColor, textColor: textColor, hintColor: hintColor,
+  ThemeExtension<TextFieldThemeColor> copyWith() {
+    return TextFieldThemeColor(labelColor: labelColor, textColor: textColor, hintColor: hintColor,
       noteColor: noteColor, disableHintColor: disableHintColor,
       disableBorderColor: disableBorderColor, enableBorderColor: enableBorderColor, focusedBorderColor: focusedBorderColor,
     );
   }
 
   @override
-  ThemeExtension<PrimaryTextFieldColor> lerp(covariant ThemeExtension<PrimaryTextFieldColor>? other, double t) {
-    if (other is! PrimaryTextFieldColor) {
+  ThemeExtension<TextFieldThemeColor> lerp(covariant ThemeExtension<TextFieldThemeColor>? other, double t) {
+    if (other is! TextFieldThemeColor) {
       return this;
     }
-    return PrimaryTextFieldColor(
+    return TextFieldThemeColor(
       labelColor: Color.lerp(labelColor, other.labelColor, t),
       hintColor: Color.lerp(hintColor, other.hintColor, t),
       disableHintColor: Color.lerp(disableHintColor, other.disableHintColor, t),

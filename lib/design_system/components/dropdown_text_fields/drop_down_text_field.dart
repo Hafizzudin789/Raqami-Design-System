@@ -1,12 +1,13 @@
-import 'package:design_system/design_system/foundation/color_palette.dart';
+import 'package:design_system/design_system/foundation/colors.dart';
 import 'package:design_system/design_system/helper_widgets/svg_image.dart';
-import 'package:design_system/design_system/raqami_assets/raqami_flags.dart';
-import 'package:design_system/design_system/raqami_assets/raqami_icons.dart';
 import 'package:flutter/material.dart';
+import '../../assets/raqami_flags.dart';
+import '../../assets/raqami_icons.dart';
 import '../../foundation/font_size.dart';
-import 'drop_down_field_color.dart';
+import 'dropdown_text_field_theme_color.dart';
 
-class PrimaryDropDownField extends StatelessWidget {
+
+class RaqamiDropDownTextField extends StatelessWidget {
   final String hint;
   final String label;
   final String? note;
@@ -14,13 +15,13 @@ class PrimaryDropDownField extends StatelessWidget {
   final bool hasError;
   final String? prefixImagePath;
   final VoidCallback? onTap;
-  const PrimaryDropDownField({Key? key, required this.hint,
+  const RaqamiDropDownTextField({Key? key, required this.hint,
     required this.label, this.note, this.isEnabled = true,
     this.hasError = false, this.prefixImagePath, this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final DropDownFieldColor dropDownFieldColor = Theme.of(context).extension<DropDownFieldColor>()!;
+    final DropDownTextFieldThemeColor dropDownFieldColor = Theme.of(context).extension<DropDownTextFieldThemeColor>()!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [

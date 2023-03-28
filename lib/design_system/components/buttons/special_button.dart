@@ -1,9 +1,9 @@
-import 'package:design_system/design_system/components/design_buttons/button_size.dart';
-import 'package:design_system/design_system/components/design_buttons/button_colors.dart';
 import 'package:design_system/design_system/foundation/font_size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../helper_widgets/svg_image.dart';
+import 'button_theme_colors.dart';
+import 'button_size.dart';
 
 
 class SpecialButton extends StatelessWidget {

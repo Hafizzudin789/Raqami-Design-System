@@ -1,12 +1,12 @@
-import 'package:design_system/design_system/components/design_buttons/button_size.dart';
-import 'package:design_system/design_system/components/design_buttons/button_colors.dart';
 import 'package:design_system/design_system/foundation/font_size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../helper_widgets/svg_image.dart';
+import 'button_theme_colors.dart';
+import 'button_size.dart';
 
 
-class DisabledButton extends StatelessWidget {
+class TertiaryButton extends StatelessWidget {
   final String label;
   final String? icon;
   final Color? buttonColor;
@@ -14,30 +14,30 @@ class DisabledButton extends StatelessWidget {
   final ButtonSize buttonSize;
 
   /// xs size button
-  const DisabledButton.xs({super.key, required this.label, this.icon, this.buttonColor, this.onPressed})
+  const TertiaryButton.xs({super.key, required this.label, this.icon, this.buttonColor, this.onPressed})
       : buttonSize = ButtonSize.xs;
 
   /// s size button
-  const DisabledButton.s({super.key, required this.label, this.icon, this.buttonColor, this.onPressed})
+  const TertiaryButton.s({super.key, required this.label, this.icon, this.buttonColor, this.onPressed})
       : buttonSize = ButtonSize.s;
 
   /// m size button
-  const DisabledButton.m({super.key, required this.label, this.icon, this.buttonColor, this.onPressed})
+  const TertiaryButton.m({super.key, required this.label, this.icon, this.buttonColor, this.onPressed})
       : buttonSize = ButtonSize.m;
 
   /// l size button
-  const DisabledButton.l({super.key, required this.label, this.icon, this.buttonColor, this.onPressed})
+  const TertiaryButton.l({super.key, required this.label, this.icon, this.buttonColor, this.onPressed})
       : buttonSize = ButtonSize.l;
 
   @override
   Widget build(BuildContext context) {
-    final DisabledButtonColor disabledButtonColor = Theme.of(context).extension<DisabledButtonColor>()!;
+    final TertiaryButtonColor tertiaryButtonColor = Theme.of(context).extension<TertiaryButtonColor>()!;
 
     final child = Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        if (icon != null) SvgImage(imagePath: icon!, size: getIconSize(), color: disabledButtonColor.labelColor!),
+        if (icon != null) SvgImage(imagePath: icon!, size: getIconSize(), color: buttonColor??tertiaryButtonColor.color!),
         if (icon != null) const SizedBox(width: 8),
         Text(label, textAlign: TextAlign.center, style: getLabelStyle()),
       ],
@@ -46,8 +46,8 @@ class DisabledButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(buttonColor??disabledButtonColor.color),
-        foregroundColor: MaterialStateProperty.all(disabledButtonColor.labelColor),
+        backgroundColor: MaterialStateProperty.all(Colors.transparent),
+        foregroundColor: MaterialStateProperty.all(buttonColor??tertiaryButtonColor.color),
         shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
         padding: MaterialStateProperty.all(getButtonPadding()),
       ),

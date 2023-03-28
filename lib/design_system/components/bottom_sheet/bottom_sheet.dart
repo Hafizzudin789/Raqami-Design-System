@@ -1,22 +1,22 @@
-import 'package:design_system/design_system/components/design_bottom_list/bottom_list_color.dart';
-import 'package:design_system/design_system/components/design_bottom_list/country_model.dart';
-import 'package:design_system/design_system/foundation/color_palette.dart';
+import 'package:design_system/design_system/foundation/colors.dart';
 import 'package:design_system/design_system/helper_widgets/svg_image.dart';
-import 'package:design_system/design_system/raqami_assets/raqami_flags.dart';
 import 'package:flutter/material.dart';
+import '../../assets/raqami_flags.dart';
 import '../../foundation/font_size.dart';
+import 'bottom_sheet_theme_color.dart';
+import 'country_model.dart';
 
 
-class DesignBottomList {
+class RaqamiBottomSheet {
 
-  showBottomList({
+  static showCountryList({
     required BuildContext context,
     required String title,
     bool isPhoneCode = false,
     bool isCurrency = false,
     bool isCountry = false,
   }) {
-    final BottomListColor bottomListColor = Theme.of(context).extension<BottomListColor>()!;
+    final BottomSheetColor bottomListColor = Theme.of(context).extension<BottomSheetColor>()!;
     showModalBottomSheet(
       context: context,
       shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(12), topRight: Radius.circular(12))),

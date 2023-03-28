@@ -1,4 +1,4 @@
-import 'package:design_system/design_system/components/design_text_box/text_box_color.dart';
+import 'package:design_system/design_system/components/amount_text_box/text_box_theme_color.dart';
 import 'package:design_system/design_system/foundation/font_size.dart';
 import 'package:design_system/design_system/foundation/ui_helpers.dart';
 import 'package:flutter/material.dart';

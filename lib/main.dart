@@ -23,8 +23,8 @@ class MyApp extends StatelessWidget {
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Raqami Design system',
-            theme: RaqamiThemes().lightTheme,
-            darkTheme: RaqamiThemes().darkTheme,
+            theme: RaqamiThemes.lightTheme,
+            darkTheme: RaqamiThemes.darkTheme,
             themeMode: context.watch<ThemeProvider>().themeMode,
             home: const AllComponentsUi(),
           ),

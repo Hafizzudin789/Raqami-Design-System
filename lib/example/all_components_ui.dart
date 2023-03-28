@@ -1,23 +1,24 @@
-import 'package:design_system/design_system/components/design_buttons/disabled_button.dart';
-import 'package:design_system/design_system/components/design_buttons/primary_button.dart';
-import 'package:design_system/design_system/components/design_buttons/secondary_button.dart';
-import 'package:design_system/design_system/components/design_buttons/special_button.dart';
-import 'package:design_system/design_system/components/design_buttons/tertiary_button.dart';
-import 'package:design_system/design_system/components/design_dropdown_fields/primary_drown_down_field.dart';
-import 'package:design_system/design_system/components/design_search_box/primary_search_box.dart';
-import 'package:design_system/design_system/components/design_text_fields/primary_text_field.dart';
-import 'package:design_system/design_system/components/design_toast_message.dart';
 import 'package:design_system/design_system/foundation/ui_helpers.dart';
-import 'package:design_system/design_system/raqami_assets/raqami_flags.dart';
-import 'package:design_system/design_system/raqami_assets/raqami_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../design_system/components/design_bottom_list/show_bottom_list.dart';
-import '../design_system/components/design_header.dart';
-import '../design_system/components/design_text_box/amount_text_box.dart';
-import '../design_system/foundation/color_palette.dart';
+import '../design_system/assets/raqami_flags.dart';
+import '../design_system/assets/raqami_icons.dart';
+import '../design_system/components/amount_text_box/amount_text_box.dart';
+import '../design_system/components/app_bar.dart';
+import '../design_system/components/bottom_sheet/bottom_sheet.dart';
+import '../design_system/components/buttons/disabled_button.dart';
+import '../design_system/components/buttons/primary_button.dart';
+import '../design_system/components/buttons/secondary_button.dart';
+import '../design_system/components/buttons/special_button.dart';
+import '../design_system/components/buttons/tertiary_button.dart';
+import '../design_system/components/dropdown_text_fields/drop_down_text_field.dart';
+import '../design_system/components/search_box/search_box.dart';
+import '../design_system/components/text_fields/text_field.dart';
+import '../design_system/components/toast_message.dart';
+import '../design_system/foundation/colors.dart';
 import '../design_system/foundation/font_size.dart';
 import '../design_system/themes/theme_provider.dart';
+
 
 class AllComponentsUi extends StatefulWidget {
   const AllComponentsUi({Key? key}) : super(key: key);
@@ -308,69 +309,85 @@ class _AllComponentsUiState extends State<AllComponentsUi> {
   ];
 
   List<Widget> get _textFieldsWithoutNote => [
-    const PrimaryTextField(hint: "Hint", label: "Label"),
+    const RaqamiTextField(hint: "Hint", label: "Label"),
     verticalSpaceXXXXLarge,
     verticalSpaceXXXXLarge,
-    const PrimaryTextField(hint: "Hint", label: "Label", isEnabled: false),
+    const RaqamiTextField(hint: "Hint", label: "Label", isEnabled: false),
     verticalSpaceXXXXLarge,
     verticalSpaceXXXXLarge,
-    const PrimaryTextField(hint: "Hint", label: "Label", hasError: true),
+    const RaqamiTextField(hint: "Hint", label: "Label", hasError: true),
     verticalSpaceXXXXLarge,
     verticalSpaceXXXXLarge,
   ];
 
   List<Widget> get _textFieldsWithNote => [
-    const PrimaryTextField(hint: "Hint", label: "Label", note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
+    const RaqamiTextField(hint: "Hint", label: "Label", note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
     verticalSpaceXXXXLarge,
     verticalSpaceXXXXLarge,
-    const PrimaryTextField(hint: "Hint", label: "Label", isEnabled: false, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
+    const RaqamiTextField(hint: "Hint", label: "Label", isEnabled: false, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
     verticalSpaceXXXXLarge,
     verticalSpaceXXXXLarge,
-    const PrimaryTextField(hint: "Hint", label: "Label", hasError: true, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
+    const RaqamiTextField(hint: "Hint", label: "Label", hasError: true, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
     verticalSpaceXXXLarge,
     verticalSpaceXXXLarge,
   ];
 
   List<Widget> get _dropDownWithNote => [
-    const PrimaryDropDownField(hint: "Hint", label: "Label", note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
-    verticalSpaceXXXXLarge,
-    verticalSpaceXXXXLarge,
-    const PrimaryDropDownField(hint: "Hint", label: "Label", isEnabled: false, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
-    verticalSpaceXXXXLarge,
-    verticalSpaceXXXXLarge,
-    const PrimaryDropDownField(hint: "Hint", label: "Label", hasError: true, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
-    verticalSpaceXXXLarge,
-    verticalSpaceXXXLarge,
-  ];
+        const RaqamiDropDownTextField(
+          hint: "Hint",
+          label: "Label",
+          note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",
+        ),
+        verticalSpaceXXXXLarge,
+        verticalSpaceXXXXLarge,
+        const RaqamiDropDownTextField(
+          hint: "Hint",
+          label: "Label",
+          isEnabled: false,
+          note:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",
+        ),
+        verticalSpaceXXXXLarge,
+        verticalSpaceXXXXLarge,
+        const RaqamiDropDownTextField(
+          hint: "Hint",
+          label: "Label",
+          hasError: true,
+          note:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",
+        ),
+        verticalSpaceXXXLarge,
+        verticalSpaceXXXLarge,
+      ];
 
   List<Widget> get _dropDownWithoutNote => [
-    const PrimaryDropDownField(hint: "Hint", label: "Label"),
+    const RaqamiDropDownTextField(hint: "Hint", label: "Label"),
     verticalSpaceXXXXLarge,
     verticalSpaceXXXXLarge,
-    const PrimaryDropDownField(hint: "Hint", label: "Label", isEnabled: false),
+    const RaqamiDropDownTextField(hint: "Hint", label: "Label", isEnabled: false),
     verticalSpaceXXXXLarge,
     verticalSpaceXXXXLarge,
-    const PrimaryDropDownField(hint: "Hint", label: "Label", hasError: true),
+    const RaqamiDropDownTextField(hint: "Hint", label: "Label", hasError: true),
     verticalSpaceXXXLarge,
     verticalSpaceXXXLarge,
   ];
 
   List<Widget> get _dropDownWithNoteFlag => [
-    const PrimaryDropDownField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
+    const RaqamiDropDownTextField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
     verticalSpaceXXXXLarge,
     verticalSpaceXXXXLarge,
-    const PrimaryDropDownField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, isEnabled: false, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
+    const RaqamiDropDownTextField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, isEnabled: false, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
     verticalSpaceXXXXLarge,
     verticalSpaceXXXXLarge,
-    const PrimaryDropDownField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, hasError: true, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
+    const RaqamiDropDownTextField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, hasError: true, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
     verticalSpaceXXXLarge,
     verticalSpaceXXXLarge,
   ];
 
   List<Widget> get _dropDownWithoutNoteFlag => [
-    PrimaryDropDownField(
+    RaqamiDropDownTextField(
       onTap: () {
-        DesignBottomList().showBottomList(context: context, title: "Select country", isPhoneCode: true);
+        RaqamiBottomSheet.showCountryList(context: context, title: "Select country", isCurrency: true);
       },
       hint: "Hint",
       label: "Label",
@@ -378,18 +395,18 @@ class _AllComponentsUiState extends State<AllComponentsUi> {
     ),
     verticalSpaceXXXXLarge,
     verticalSpaceXXXXLarge,
-    const PrimaryDropDownField(hint: "Hint", label: "Label", isEnabled: false, prefixImagePath: RaqamiFlags.pakistan, ),
+    const RaqamiDropDownTextField(hint: "Hint", label: "Label", isEnabled: false, prefixImagePath: RaqamiFlags.pakistan, ),
     verticalSpaceXXXXLarge,
     verticalSpaceXXXXLarge,
-    const PrimaryDropDownField(hint: "Hint", label: "Label", hasError: true, prefixImagePath: RaqamiFlags.pakistan, ),
+    const RaqamiDropDownTextField(hint: "Hint", label: "Label", hasError: true, prefixImagePath: RaqamiFlags.pakistan, ),
     verticalSpaceXXXLarge,
     verticalSpaceXXXLarge,
   ];
 
   List<Widget> get _searchBox => [
-    const PrimarySearchBox(hint: "Search"),
+    const RaqamiSearchBox(hint: "Search"),
     verticalSpaceXXXXLarge,
-    const PrimarySearchBox(hint: "Search", isEnabled: false),
+    const RaqamiSearchBox(hint: "Search", isEnabled: false),
     verticalSpaceXXXXLarge,
   ];
 
@@ -425,7 +442,7 @@ class _AllComponentsUiState extends State<AllComponentsUi> {
   ];
 
   List<Widget> get _header => [
-    DesignHeader(
+    appBar(
       title: "TitleHeader",
       hasLeadingArrowBackButton: true,
       hasTrailingCloseButton: true,
@@ -433,11 +450,11 @@ class _AllComponentsUiState extends State<AllComponentsUi> {
       onPressedClose: () {},
     ),
     verticalSpaceRegular,
-    DesignHeader(title: "TitleHeader", hasLeadingArrowBackButton: true, onPressedArrow: () {},),
+    appBar(title: "TitleHeader", hasLeadingArrowBackButton: true, onPressedArrow: () {},),
     verticalSpaceRegular,
-    DesignHeader(title: "TitleHeader", hasTrailingCloseButton: true, onPressedClose: () {},),
+    appBar(title: "TitleHeader", hasTrailingCloseButton: true, onPressedClose: () {},),
     verticalSpaceRegular,
-    DesignHeader(
+    appBar(
       title: "TitleHeader",
       hasLeadingArrowBackButton: true,
       hasTrailingCloseButton: true,

@@ -1,16 +1,17 @@
-import 'package:design_system/design_system/components/design_bottom_list/bottom_list_color.dart';
-import 'package:design_system/design_system/components/design_dropdown_fields/drop_down_field_color.dart';
-import 'package:design_system/design_system/components/design_text_box/text_box_color.dart';
-import 'package:design_system/design_system/foundation/color_palette.dart';
+import 'package:design_system/design_system/foundation/colors.dart';
 import 'package:design_system/design_system/foundation/font_size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../components/design_buttons/button_colors.dart';
-import '../components/design_text_fields/text_field_colors.dart';
+import '../components/amount_text_box/text_box_theme_color.dart';
+import '../components/bottom_sheet/bottom_sheet_theme_color.dart';
+import '../components/buttons/button_theme_colors.dart';
+import '../components/dropdown_text_fields/dropdown_text_field_theme_color.dart';
+import '../components/text_fields/text_field_theme_colors.dart';
+
 
 class RaqamiThemes {
 
-  ThemeData lightTheme = ThemeData(
+  static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
     colorScheme: ColorScheme.fromSwatch(
       // primarySwatch: Colors.indigo,
@@ -45,7 +46,7 @@ class RaqamiThemes {
       ),
 
 
-      PrimaryTextFieldColor(
+      TextFieldThemeColor(
         labelColor: ColorPalette.pGray80Color,
         hintColor: ColorPalette.greyColor,
         disableHintColor: ColorPalette.pGray50Color,
@@ -57,7 +58,7 @@ class RaqamiThemes {
         focusedBorderColor: ColorPalette.blackColor,
         disableBorderColor: ColorPalette.pGray20Color,
       ),
-      DropDownFieldColor(
+      DropDownTextFieldThemeColor(
         labelColor: ColorPalette.pGray80Color,
         hintColor: ColorPalette.greyColor,
         disableHintColor: ColorPalette.pGray50Color,
@@ -80,14 +81,14 @@ class RaqamiThemes {
         labelColor: ColorPalette.greyColor,
       ),
 
-      BottomListColor(
+      BottomSheetColor(
         labelColor: ColorPalette.valueColorL,
         separatorColor: ColorPalette.separatorColorL,
       ),
     ],
   );
 
-  ThemeData darkTheme = ThemeData(
+  static ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: ColorPalette.pGray100Color,
     colorScheme: ColorScheme.fromSwatch(
       // primarySwatch: Colors.indigo,
@@ -122,7 +123,7 @@ class RaqamiThemes {
       ),
 
 
-      PrimaryTextFieldColor(
+      TextFieldThemeColor(
         labelColor: ColorPalette.specialButtonColorD,
         hintColor: ColorPalette.noteColorD,
         disableHintColor: ColorPalette.pGray80Color,
@@ -133,7 +134,7 @@ class RaqamiThemes {
         focusedBorderColor: ColorPalette.focusedBorderColorD,
         disableBorderColor: ColorPalette.pGray80Color,
       ),
-      DropDownFieldColor(
+      DropDownTextFieldThemeColor(
         labelColor: ColorPalette.specialButtonColorD,
         hintColor: ColorPalette.noteColorD,
         disableHintColor: ColorPalette.pGray80Color,
@@ -155,7 +156,7 @@ class RaqamiThemes {
         labelColor: ColorPalette.disabledButtonColorD,
       ),
 
-      BottomListColor(
+      BottomSheetColor(
         labelColor: ColorPalette.pWhiteColor,
         separatorColor: ColorPalette.separatorColorD,
       ),

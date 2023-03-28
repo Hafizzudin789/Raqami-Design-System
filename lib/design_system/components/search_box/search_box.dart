@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import '../../foundation/color_palette.dart';
+import '../../assets/raqami_icons.dart';
+import '../../foundation/colors.dart';
 import '../../foundation/font_size.dart';
 import '../../helper_widgets/svg_image.dart';
-import '../../raqami_assets/raqami_icons.dart';
-import '../design_text_fields/text_field_colors.dart';
+import '../text_fields/text_field_theme_colors.dart';
 
-class PrimarySearchBox extends StatelessWidget {
+
+class RaqamiSearchBox extends StatelessWidget {
   final String hint;
   // final String? note;
   final bool isEnabled;
   final TextEditingController? controller;
   // final bool hasError;
-  const PrimarySearchBox({Key? key, required this.hint, this.isEnabled = true, this.controller}) : super(key: key);
+  const RaqamiSearchBox({Key? key, required this.hint, this.isEnabled = true, this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final PrimaryTextFieldColor primaryTextFieldColor = Theme.of(context).extension<PrimaryTextFieldColor>()!;
+    final TextFieldThemeColor primaryTextFieldColor = Theme.of(context).extension<TextFieldThemeColor>()!;
     return TextField(
       controller: controller,
       cursorColor: primaryTextFieldColor.focusedBorderColor,

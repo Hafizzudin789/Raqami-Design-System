@@ -1,10 +1,11 @@
-import 'package:design_system/design_system/foundation/color_palette.dart';
+import 'package:design_system/design_system/foundation/colors.dart';
 import 'package:design_system/design_system/foundation/font_size.dart';
 import 'package:design_system/design_system/foundation/ui_helpers.dart';
 import 'package:design_system/design_system/helper_widgets/svg_image.dart';
-import 'package:design_system/design_system/raqami_assets/raqami_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+
+import '../assets/raqami_icons.dart';
 
 class ToastMessage {
   final String message;

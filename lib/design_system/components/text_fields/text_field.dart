@@ -1,21 +1,21 @@
-import 'package:design_system/design_system/components/design_text_fields/text_field_colors.dart';
-import 'package:design_system/design_system/foundation/color_palette.dart';
+import 'package:design_system/design_system/components/text_fields/text_field_theme_colors.dart';
+import 'package:design_system/design_system/foundation/colors.dart';
 import 'package:flutter/material.dart';
 import '../../foundation/font_size.dart';
 
-class PrimaryTextField extends StatelessWidget {
+class RaqamiTextField extends StatelessWidget {
   final String hint;
   final String label;
   final String? note;
   final bool isEnabled;
   final bool hasError;
   final TextEditingController? controller;
-  const PrimaryTextField({Key? key, required this.hint, required this.label, this.note,
+  const RaqamiTextField({Key? key, required this.hint, required this.label, this.note,
     this.isEnabled = true, this.hasError = false, this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final PrimaryTextFieldColor primaryTextFieldColor = Theme.of(context).extension<PrimaryTextFieldColor>()!;
+    final TextFieldThemeColor primaryTextFieldColor = Theme.of(context).extension<TextFieldThemeColor>()!;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [

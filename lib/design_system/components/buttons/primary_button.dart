@@ -1,12 +1,12 @@
-import 'package:design_system/design_system/components/design_buttons/button_size.dart';
-import 'package:design_system/design_system/components/design_buttons/button_colors.dart';
 import 'package:design_system/design_system/foundation/font_size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../helper_widgets/svg_image.dart';
+import 'button_theme_colors.dart';
+import 'button_size.dart';
 
 
-class SecondaryButton extends StatelessWidget {
+class PrimaryButton extends StatelessWidget {
   final String label;
   final String? icon;
   final Color? buttonColor;
@@ -14,30 +14,30 @@ class SecondaryButton extends StatelessWidget {
   final ButtonSize buttonSize;
 
   /// xs size button
-  const SecondaryButton.xs({super.key, required this.label, this.icon, this.buttonColor, this.onPressed})
+  const PrimaryButton.xs({super.key, required this.label, this.icon, this.buttonColor, this.onPressed})
       : buttonSize = ButtonSize.xs;
 
   /// s size button
-  const SecondaryButton.s({super.key, required this.label, this.icon, this.buttonColor, this.onPressed})
+  const PrimaryButton.s({super.key, required this.label, this.icon, this.buttonColor, this.onPressed})
       : buttonSize = ButtonSize.s;
 
   /// m size button
-  const SecondaryButton.m({super.key, required this.label, this.icon, this.buttonColor, this.onPressed})
+  const PrimaryButton.m({super.key, required this.label, this.icon, this.buttonColor, this.onPressed})
       : buttonSize = ButtonSize.m;
 
   /// l size button
-  const SecondaryButton.l({super.key, required this.label, this.icon, this.buttonColor, this.onPressed})
+  const PrimaryButton.l({super.key, required this.label, this.icon, this.buttonColor, this.onPressed})
       : buttonSize = ButtonSize.l;
 
   @override
   Widget build(BuildContext context) {
-    final SecondaryButtonColor secondaryButtonColor = Theme.of(context).extension<SecondaryButtonColor>()!;
+    final PrimaryButtonColor primaryButtonColor = Theme.of(context).extension<PrimaryButtonColor>()!;
 
     final child = Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        if (icon != null) SvgImage(imagePath: icon!, size: getIconSize(), color: buttonColor??secondaryButtonColor.color!),
+        if (icon != null) SvgImage(imagePath: icon!, size: getIconSize(), color: Colors.white),
         if (icon != null) const SizedBox(width: 8),
         Text(label, textAlign: TextAlign.center, style: getLabelStyle()),
       ],
@@ -46,9 +46,9 @@ class SecondaryButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(Colors.transparent),
-        foregroundColor: MaterialStateProperty.all(buttonColor??secondaryButtonColor.color),
-        shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8), side: BorderSide(color: buttonColor??secondaryButtonColor.color!))),
+        backgroundColor: MaterialStateProperty.all(buttonColor??primaryButtonColor.color),
+        foregroundColor: MaterialStateProperty.all(Colors.white),
+        shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
         padding: MaterialStateProperty.all(getButtonPadding()),
       ),
       child: child,
