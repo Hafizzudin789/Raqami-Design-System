@@ -17,6 +17,7 @@ class RaqamiThemes {
       brightness: Brightness.light,
       backgroundColor: ColorPalette.pWhiteColor,
     ),
+    cardColor: ColorPalette.pGray20Color,
     appBarTheme: const AppBarTheme(
       foregroundColor: Colors.black,
       backgroundColor: Colors.white,
@@ -91,6 +92,7 @@ class RaqamiThemes {
       brightness: Brightness.dark,
       backgroundColor: ColorPalette.pBlackColor,
     ),
+    cardColor: ColorPalette.pBlackColor,
     appBarTheme: const AppBarTheme(
       foregroundColor: Colors.white,
       backgroundColor: Colors.black,

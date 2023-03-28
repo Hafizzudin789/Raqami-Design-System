@@ -11,4 +11,11 @@ class RaqamiIcons {
   static const String error = "assets/icons/error.svg";
   static const String close = "assets/icons/close.svg";
   static const String arrowBack = "assets/icons/arrowBack.svg";
+
+  static const String errorDark = "assets/special_icons/errorDark.svg";
+  static const String errorLight = "assets/special_icons/errorLight.svg";
+  static const String successDark = "assets/special_icons/successDark.svg";
+  static const String successLight = "assets/special_icons/successLight.svg";
+  static const String warningDark = "assets/special_icons/warningDark.svg";
+  static const String warningLight = "assets/special_icons/warningLight.svg";
 }

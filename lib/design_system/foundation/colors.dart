@@ -64,6 +64,9 @@ class ColorPalette {
   static const valueColorL = Color(0XFF272331);
 
 
+  ///Success page
+  static const borderColorL = Color(0XFFF1F3F7);
+
 
 
 

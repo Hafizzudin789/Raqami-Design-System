@@ -1,4 +1,5 @@
 import 'package:design_system/design_system/components/bottom_sheets/primary_bottom_sheet.dart';
+import 'package:design_system/design_system/components/success_page.dart';
 import 'package:design_system/design_system/foundation/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -123,9 +124,9 @@ class _AllComponentsUiState extends State<AllComponentsUi> {
           verticalSpaceSmall,
           ..._textBox,
 
-          // const Text("Toggle button", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
-          // verticalSpaceSmall,
-          // ..._toggleButton,
+          const Text("Success page", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
+          verticalSpaceSmall,
+          ..._successPage,
         ],
       ),
     );
@@ -546,12 +547,17 @@ class _AllComponentsUiState extends State<AllComponentsUi> {
         AmountTextBox.small(amountValue: 0),
       ],
     ),
-    verticalSpaceRegular,
-    // const AmountTextBox.large(label: "Label Text", amountValue: 0),
-    // verticalSpaceRegular,
+    verticalSpaceXXXLarge,
   ];
-  // List<Widget> get _toggleButton => [
-  //   PrimaryToggleButton(),
-  //   verticalSpaceRegular,
-  // ];
+
+  List<Widget> get _successPage => [
+        PrimaryButton.l(
+          label: "Go to success page",
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const SuccessPage()));
+          },
+        ),
+        verticalSpaceXXXLarge,
+      ];
 }
