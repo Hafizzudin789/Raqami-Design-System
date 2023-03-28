@@ -1,4 +1,4 @@
-import '../components/bottom_sheet/country_model.dart';
+import '../components/bottom_sheets/country_model.dart';
 
 class RaqamiFlags {
 
@@ -30,29 +30,29 @@ class RaqamiFlags {
 
   static List countryList = [
     CountryModel(countryName: "Abkhazia", phoneCode: "+92", currency: "PKR", flagPath: RaqamiFlags.abkhazia),
-    CountryModel(countryName: "Afghanistan", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.afghanistan),
-    CountryModel(countryName: "Aland Islands", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.alandIslands),
-    CountryModel(countryName: "Albania", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.albania),
-    CountryModel(countryName: "Algeria", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.algeria),
+    CountryModel(countryName: "Afghanistan", phoneCode: "+93", currency: "AFN", flagPath: RaqamiFlags.afghanistan),
+    CountryModel(countryName: "Aland Islands", phoneCode: "+358", currency: "EUR", flagPath: RaqamiFlags.alandIslands),
+    CountryModel(countryName: "Albania", phoneCode: "+355", currency: "ALL", flagPath: RaqamiFlags.albania),
+    CountryModel(countryName: "Algeria", phoneCode: "+213", currency: "DZD", flagPath: RaqamiFlags.algeria),
     CountryModel(countryName: "American Samoa", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.americanSamoa),
-    CountryModel(countryName: "Antarctica", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.antarctica),
-    CountryModel(countryName: "Argentina", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.argentina),
-    CountryModel(countryName: "Australia", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.australia),
-    CountryModel(countryName: "Corsica", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.corsica),
-    CountryModel(countryName: "Costarica", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.costarica),
-    CountryModel(countryName: "Croatia", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.croatia),
-    CountryModel(countryName: "Cuba", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.cuba),
-    CountryModel(countryName: "France", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.france),
-    CountryModel(countryName: "Georgia", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.georgia),
-    CountryModel(countryName: "Germany", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.germany),
-    CountryModel(countryName: "India", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.india),
-    CountryModel(countryName: "Indonesia", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.indonesia),
-    CountryModel(countryName: "Iran", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.iran),
-    CountryModel(countryName: "Jamaica", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.jamaica),
-    CountryModel(countryName: "Japan", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.japan),
-    CountryModel(countryName: "Pakistan", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.pakistan),
+    CountryModel(countryName: "Antarctica", phoneCode: "+672", currency: "XCD", flagPath: RaqamiFlags.antarctica),
+    CountryModel(countryName: "Argentina", phoneCode: "+54", currency: "ARP", flagPath: RaqamiFlags.argentina),
+    CountryModel(countryName: "Australia", phoneCode: "+61", currency: "AUD", flagPath: RaqamiFlags.australia),
+    CountryModel(countryName: "Corsica", phoneCode: "+33", currency: "EUR", flagPath: RaqamiFlags.corsica),
+    CountryModel(countryName: "Costarica", phoneCode: "+506", currency: "CRC", flagPath: RaqamiFlags.costarica),
+    CountryModel(countryName: "Croatia", phoneCode: "+385", currency: "HRK", flagPath: RaqamiFlags.croatia),
+    CountryModel(countryName: "Cuba", phoneCode: "+53", currency: "CUP", flagPath: RaqamiFlags.cuba),
+    CountryModel(countryName: "France", phoneCode: "+33", currency: "EUR", flagPath: RaqamiFlags.france),
+    CountryModel(countryName: "Georgia", phoneCode: "+995", currency: "GEL", flagPath: RaqamiFlags.georgia),
+    CountryModel(countryName: "Germany", phoneCode: "+49", currency: "EUR", flagPath: RaqamiFlags.germany),
+    CountryModel(countryName: "India", phoneCode: "+91", currency: "INR", flagPath: RaqamiFlags.india),
+    CountryModel(countryName: "Indonesia", phoneCode: "+62", currency: "IDR", flagPath: RaqamiFlags.indonesia),
+    CountryModel(countryName: "Iran", phoneCode: "+98", currency: "IRR", flagPath: RaqamiFlags.iran),
+    CountryModel(countryName: "Jamaica", phoneCode: "+1", currency: "JMD", flagPath: RaqamiFlags.jamaica),
+    CountryModel(countryName: "Japan", phoneCode: "+81", currency: "JPY", flagPath: RaqamiFlags.japan),
+    CountryModel(countryName: "Pakistan", phoneCode: "+92", currency: "PKR", flagPath: RaqamiFlags.pakistan),
     CountryModel(countryName: "United Stated", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.us),
-    CountryModel(countryName: "United Kingdom", phoneCode: "+1", currency: "USD", flagPath: RaqamiFlags.unitedKingdom),
+    CountryModel(countryName: "United Kingdom", phoneCode: "+44", currency: "GBP", flagPath: RaqamiFlags.unitedKingdom),
 
   ];
 }

@@ -3,7 +3,7 @@ import 'package:design_system/design_system/foundation/font_size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../components/amount_text_box/text_box_theme_color.dart';
-import '../components/bottom_sheet/bottom_sheet_theme_color.dart';
+import '../components/bottom_sheets/bottom_sheet_theme_color.dart';
 import '../components/buttons/button_theme_colors.dart';
 import '../components/dropdown_text_fields/dropdown_text_field_theme_color.dart';
 import '../components/text_fields/text_field_theme_colors.dart';
@@ -14,7 +14,6 @@ class RaqamiThemes {
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
     colorScheme: ColorScheme.fromSwatch(
-      // primarySwatch: Colors.indigo,
       brightness: Brightness.light,
       backgroundColor: ColorPalette.pWhiteColor,
     ),
@@ -50,7 +49,6 @@ class RaqamiThemes {
         labelColor: ColorPalette.pGray80Color,
         hintColor: ColorPalette.greyColor,
         disableHintColor: ColorPalette.pGray50Color,
-        // textColor: ColorPalette.pGray80Color,
         textColor: ColorPalette.pGray100Color,
         noteColor: ColorPalette.pGray60Color,
 
@@ -62,7 +60,6 @@ class RaqamiThemes {
         labelColor: ColorPalette.pGray80Color,
         hintColor: ColorPalette.greyColor,
         disableHintColor: ColorPalette.pGray50Color,
-        // textColor: ColorPalette.pGray80Color,
         textColor: ColorPalette.pGray100Color,
         noteColor: ColorPalette.pGray60Color,
 
@@ -91,7 +88,6 @@ class RaqamiThemes {
   static ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: ColorPalette.pGray100Color,
     colorScheme: ColorScheme.fromSwatch(
-      // primarySwatch: Colors.indigo,
       brightness: Brightness.dark,
       backgroundColor: ColorPalette.pBlackColor,
     ),

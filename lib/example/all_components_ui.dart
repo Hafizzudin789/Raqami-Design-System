@@ -1,3 +1,4 @@
+import 'package:design_system/design_system/components/bottom_sheets/primary_bottom_sheet.dart';
 import 'package:design_system/design_system/foundation/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -5,7 +6,8 @@ import '../design_system/assets/raqami_flags.dart';
 import '../design_system/assets/raqami_icons.dart';
 import '../design_system/components/amount_text_box/amount_text_box.dart';
 import '../design_system/components/app_bar.dart';
-import '../design_system/components/bottom_sheet/bottom_sheet.dart';
+import '../design_system/components/bottom_sheets/country_bottom_sheet.dart';
+import '../design_system/components/bottom_sheets/country_model.dart';
 import '../design_system/components/buttons/disabled_button.dart';
 import '../design_system/components/buttons/primary_button.dart';
 import '../design_system/components/buttons/secondary_button.dart';
@@ -60,10 +62,6 @@ class _AllComponentsUiState extends State<AllComponentsUi> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         children: [
-          const Text("Dropdown Without Note With Flag", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
-          verticalSpaceSmall,
-          ..._dropDownWithoutNoteFlag,
-
           const Text("Special Button", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
           verticalSpaceSmall,
           ..._specialButtons,
@@ -333,10 +331,28 @@ class _AllComponentsUiState extends State<AllComponentsUi> {
   ];
 
   List<Widget> get _dropDownWithNote => [
-        const RaqamiDropDownTextField(
+        RaqamiDropDownTextField(
           hint: "Hint",
           label: "Label",
-          note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",
+          note:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",
+          onTap: () {
+            PrimaryBottomSheet(
+              context: context,
+              title: "Text label",
+              onSelected: (String value) {},
+              data: [
+                "Purpose A",
+                "Purpose B",
+                "Purpose C",
+                "Purpose D",
+                "Purpose E",
+                "Purpose F",
+                "Purpose G",
+                "Purpose H"
+              ],
+            ).showList();
+          },
         ),
         verticalSpaceXXXXLarge,
         verticalSpaceXXXXLarge,
@@ -361,47 +377,101 @@ class _AllComponentsUiState extends State<AllComponentsUi> {
       ];
 
   List<Widget> get _dropDownWithoutNote => [
-    const RaqamiDropDownTextField(hint: "Hint", label: "Label"),
-    verticalSpaceXXXXLarge,
-    verticalSpaceXXXXLarge,
-    const RaqamiDropDownTextField(hint: "Hint", label: "Label", isEnabled: false),
-    verticalSpaceXXXXLarge,
-    verticalSpaceXXXXLarge,
-    const RaqamiDropDownTextField(hint: "Hint", label: "Label", hasError: true),
-    verticalSpaceXXXLarge,
-    verticalSpaceXXXLarge,
-  ];
+        RaqamiDropDownTextField(
+          hint: "Hint",
+          label: "Label",
+          onTap: () {
+            PrimaryBottomSheet(
+              context: context,
+              title: "Text label",
+              onSelected: (String value) {},
+              data: ["Purpose A", "Purpose B", "Purpose C", "Purpose D", "Purpose E", "Purpose F", "Purpose G", "Purpose H"],
+            ).showList();
+          },
+        ),
+        verticalSpaceXXXXLarge,
+        verticalSpaceXXXXLarge,
+        const RaqamiDropDownTextField(
+            hint: "Hint", label: "Label", isEnabled: false),
+        verticalSpaceXXXXLarge,
+        verticalSpaceXXXXLarge,
+        const RaqamiDropDownTextField(
+            hint: "Hint", label: "Label", hasError: true),
+        verticalSpaceXXXLarge,
+        verticalSpaceXXXLarge,
+      ];
 
   List<Widget> get _dropDownWithNoteFlag => [
-    const RaqamiDropDownTextField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
-    verticalSpaceXXXXLarge,
-    verticalSpaceXXXXLarge,
-    const RaqamiDropDownTextField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, isEnabled: false, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
-    verticalSpaceXXXXLarge,
-    verticalSpaceXXXXLarge,
-    const RaqamiDropDownTextField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, hasError: true, note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",),
-    verticalSpaceXXXLarge,
-    verticalSpaceXXXLarge,
-  ];
+        RaqamiDropDownTextField(
+          hint: "Hint",
+          label: "Label",
+          prefixImagePath: RaqamiFlags.pakistan,
+          note:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",
+          onTap: () {
+            RaqamiCountryBottomSheet.country(
+              context: context,
+              title: "Select country",
+              onSelected: (CountryModel value) {},
+            ).showList();
+          },
+        ),
+        verticalSpaceXXXXLarge,
+        verticalSpaceXXXXLarge,
+        const RaqamiDropDownTextField(
+          hint: "Hint",
+          label: "Label",
+          prefixImagePath: RaqamiFlags.pakistan,
+          isEnabled: false,
+          note:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",
+        ),
+        verticalSpaceXXXXLarge,
+        verticalSpaceXXXXLarge,
+        const RaqamiDropDownTextField(
+          hint: "Hint",
+          label: "Label",
+          prefixImagePath: RaqamiFlags.pakistan,
+          hasError: true,
+          note:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.Typography",
+        ),
+        verticalSpaceXXXLarge,
+        verticalSpaceXXXLarge,
+      ];
 
   List<Widget> get _dropDownWithoutNoteFlag => [
-    RaqamiDropDownTextField(
-      onTap: () {
-        RaqamiBottomSheet.showCountryList(context: context, title: "Select country", isCurrency: true);
-      },
-      hint: "Hint",
-      label: "Label",
-      prefixImagePath: RaqamiFlags.pakistan,
-    ),
-    verticalSpaceXXXXLarge,
-    verticalSpaceXXXXLarge,
-    const RaqamiDropDownTextField(hint: "Hint", label: "Label", isEnabled: false, prefixImagePath: RaqamiFlags.pakistan, ),
-    verticalSpaceXXXXLarge,
-    verticalSpaceXXXXLarge,
-    const RaqamiDropDownTextField(hint: "Hint", label: "Label", hasError: true, prefixImagePath: RaqamiFlags.pakistan, ),
-    verticalSpaceXXXLarge,
-    verticalSpaceXXXLarge,
-  ];
+        RaqamiDropDownTextField(
+          onTap: () {
+            RaqamiCountryBottomSheet.phoneCode(
+              context: context,
+              title: "Select country",
+              onSelected: (CountryModel value) {},
+            ).showList();
+          },
+          hint: "Hint",
+          label: "Label",
+          prefixImagePath: RaqamiFlags.pakistan,
+        ),
+        verticalSpaceXXXXLarge,
+        verticalSpaceXXXXLarge,
+        const RaqamiDropDownTextField(
+          hint: "Hint",
+          label: "Label",
+          isEnabled: false,
+          prefixImagePath: RaqamiFlags.pakistan,
+        ),
+        verticalSpaceXXXXLarge,
+        verticalSpaceXXXXLarge,
+        const RaqamiDropDownTextField(
+          hint: "Hint",
+          label: "Label",
+          hasError: true,
+          prefixImagePath: RaqamiFlags.pakistan,
+        ),
+        verticalSpaceXXXLarge,
+        verticalSpaceXXXLarge,
+      ];
 
   List<Widget> get _searchBox => [
     const RaqamiSearchBox(hint: "Search"),

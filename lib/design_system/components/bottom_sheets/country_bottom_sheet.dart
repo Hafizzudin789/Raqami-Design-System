@@ -7,15 +7,34 @@ import 'bottom_sheet_theme_color.dart';
 import 'country_model.dart';
 
 
-class RaqamiBottomSheet {
+class RaqamiCountryBottomSheet {
+  final BuildContext context;
+  final String title;
+  final void Function(CountryModel value) onSelected;
 
-  static showCountryList({
-    required BuildContext context,
-    required String title,
-    bool isPhoneCode = false,
-    bool isCurrency = false,
-    bool isCountry = false,
-  }) {
+  final bool isCountry;
+  final bool isPhoneCode;
+  final bool isCurrency;
+
+  RaqamiCountryBottomSheet.country(
+      {required this.context, required this.title, required this.onSelected})
+      : isCountry = true,
+        isPhoneCode = false,
+        isCurrency = false;
+
+  RaqamiCountryBottomSheet.phoneCode(
+      {required this.context, required this.title, required this.onSelected})
+      : isCountry = false,
+        isPhoneCode = true,
+        isCurrency = false;
+
+  RaqamiCountryBottomSheet.currency(
+      {required this.context, required this.title, required this.onSelected})
+      : isCountry = false,
+        isPhoneCode = false,
+        isCurrency = true;
+
+  showList() {
     final BottomSheetColor bottomListColor = Theme.of(context).extension<BottomSheetColor>()!;
     showModalBottomSheet(
       context: context,
@@ -47,12 +66,16 @@ class RaqamiBottomSheet {
             const SizedBox(height: 24),
             Expanded(
               child: ListView.separated(
-                separatorBuilder: (context, index) => Divider(color: bottomListColor.separatorColor, thickness: 1),
+                separatorBuilder: (context, index) => Divider(color: bottomListColor.separatorColor, thickness: 1, height: 0),
                 itemCount: RaqamiFlags.countryList.length,
                 itemBuilder: (context, index) {
                   CountryModel country = RaqamiFlags.countryList[index];
                   return ListTile(
-                    contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+                    onTap: () {
+                      onSelected.call(country);
+                      Navigator.pop(context);
+                    },
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     leading: SvgImage(imagePath: country.flagPath, size: const Size(40, 40)),
                     title: Text(
                       isPhoneCode
