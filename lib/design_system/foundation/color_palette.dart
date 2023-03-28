@@ -58,6 +58,13 @@ class ColorPalette {
   ///Text Box Colors
   static const textBoxBorderColorL = Color(0XFFC8D2DF);
 
+  ///Bottom list colors
+  static const separatorColorL = Color(0XFFCBD5E0);
+  static const separatorColorD = Color(0XFF4E5357);
+  static const valueColorL = Color(0XFF272331);
+
+
+
 
 
 

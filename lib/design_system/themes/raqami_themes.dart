@@ -1,3 +1,4 @@
+import 'package:design_system/design_system/components/design_bottom_list/bottom_list_color.dart';
 import 'package:design_system/design_system/components/design_dropdown_fields/drop_down_field_color.dart';
 import 'package:design_system/design_system/components/design_text_box/text_box_color.dart';
 import 'package:design_system/design_system/foundation/color_palette.dart';
@@ -14,6 +15,7 @@ class RaqamiThemes {
     colorScheme: ColorScheme.fromSwatch(
       // primarySwatch: Colors.indigo,
       brightness: Brightness.light,
+      backgroundColor: ColorPalette.pWhiteColor,
     ),
     appBarTheme: const AppBarTheme(
       foregroundColor: Colors.black,
@@ -77,6 +79,11 @@ class RaqamiThemes {
         textColor: ColorPalette.pGray80Color,
         labelColor: ColorPalette.greyColor,
       ),
+
+      BottomListColor(
+        labelColor: ColorPalette.valueColorL,
+        separatorColor: ColorPalette.separatorColorL,
+      ),
     ],
   );
 
@@ -85,6 +92,7 @@ class RaqamiThemes {
     colorScheme: ColorScheme.fromSwatch(
       // primarySwatch: Colors.indigo,
       brightness: Brightness.dark,
+      backgroundColor: ColorPalette.pBlackColor,
     ),
     appBarTheme: const AppBarTheme(
       foregroundColor: Colors.white,
@@ -145,6 +153,11 @@ class RaqamiThemes {
         borderColor: ColorPalette.primaryButtonColorD,
         textColor: ColorPalette.disabledButtonColorD,
         labelColor: ColorPalette.disabledButtonColorD,
+      ),
+
+      BottomListColor(
+        labelColor: ColorPalette.pWhiteColor,
+        separatorColor: ColorPalette.separatorColorD,
       ),
     ],
   );

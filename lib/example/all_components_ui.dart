@@ -12,6 +12,7 @@ import 'package:design_system/design_system/raqami_assets/raqami_flags.dart';
 import 'package:design_system/design_system/raqami_assets/raqami_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../design_system/components/design_bottom_list/show_bottom_list.dart';
 import '../design_system/components/design_header.dart';
 import '../design_system/components/design_text_box/amount_text_box.dart';
 import '../design_system/foundation/color_palette.dart';
@@ -58,6 +59,10 @@ class _AllComponentsUiState extends State<AllComponentsUi> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         children: [
+          const Text("Dropdown Without Note With Flag", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
+          verticalSpaceSmall,
+          ..._dropDownWithoutNoteFlag,
+
           const Text("Special Button", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
           verticalSpaceSmall,
           ..._specialButtons,
@@ -363,7 +368,14 @@ class _AllComponentsUiState extends State<AllComponentsUi> {
   ];
 
   List<Widget> get _dropDownWithoutNoteFlag => [
-    const PrimaryDropDownField(hint: "Hint", label: "Label", prefixImagePath: RaqamiFlags.pakistan, ),
+    PrimaryDropDownField(
+      onTap: () {
+        DesignBottomList().showBottomList(context: context, title: "Select country", isPhoneCode: true);
+      },
+      hint: "Hint",
+      label: "Label",
+      prefixImagePath: RaqamiFlags.pakistan,
+    ),
     verticalSpaceXXXXLarge,
     verticalSpaceXXXXLarge,
     const PrimaryDropDownField(hint: "Hint", label: "Label", isEnabled: false, prefixImagePath: RaqamiFlags.pakistan, ),

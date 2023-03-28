@@ -13,9 +13,10 @@ class PrimaryDropDownField extends StatelessWidget {
   final bool isEnabled;
   final bool hasError;
   final String? prefixImagePath;
+  final VoidCallback? onTap;
   const PrimaryDropDownField({Key? key, required this.hint,
     required this.label, this.note, this.isEnabled = true,
-    this.hasError = false, this.prefixImagePath}) : super(key: key);
+    this.hasError = false, this.prefixImagePath, this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +28,9 @@ class PrimaryDropDownField extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Text(label, style: TextStyle(fontSize: FontSize.m, fontWeight: FontWeight.w400, color: isEnabled?dropDownFieldColor.labelColor: dropDownFieldColor.disableHintColor),),
         ),
-        //TODO: add dropdown
         TextField(
+          readOnly: true,
+          onTap: onTap,
           cursorColor: dropDownFieldColor.focusedBorderColor,
           style: TextStyle(color: dropDownFieldColor.textColor, fontSize: FontSize.l, fontWeight: FontWeight.w400),
           decoration: InputDecoration(
