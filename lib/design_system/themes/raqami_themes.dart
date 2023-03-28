@@ -1,4 +1,5 @@
 import 'package:design_system/design_system/components/design_dropdown_fields/drop_down_field_color.dart';
+import 'package:design_system/design_system/components/design_text_box/text_box_color.dart';
 import 'package:design_system/design_system/foundation/color_palette.dart';
 import 'package:design_system/design_system/foundation/font_size.dart';
 import 'package:flutter/material.dart';
@@ -69,6 +70,13 @@ class RaqamiThemes {
         arrowColor: ColorPalette.pBlackColor,
         disableArrowColor: ColorPalette.disabledButtonTextColor,
       ),
+
+      TextBoxColor(
+        color: ColorPalette.pWhiteColor,
+        borderColor: ColorPalette.textBoxBorderColorL,
+        textColor: ColorPalette.pGray80Color,
+        labelColor: ColorPalette.greyColor,
+      ),
     ],
   );
 
@@ -130,6 +138,13 @@ class RaqamiThemes {
 
         arrowColor: ColorPalette.dropDownIconColorD,
         disableArrowColor: ColorPalette.pGray80Color,
+      ),
+
+      TextBoxColor(
+        color: ColorPalette.pSpruceColor,
+        borderColor: ColorPalette.primaryButtonColorD,
+        textColor: ColorPalette.disabledButtonColorD,
+        labelColor: ColorPalette.disabledButtonColorD,
       ),
     ],
   );

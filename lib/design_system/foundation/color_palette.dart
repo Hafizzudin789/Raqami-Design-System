@@ -55,6 +55,9 @@ class ColorPalette {
 
   static const lightWhiteColor = Color(0XFFF2F2F2);
 
+  ///Text Box Colors
+  static const textBoxBorderColorL = Color(0XFFC8D2DF);
+
 
 
 

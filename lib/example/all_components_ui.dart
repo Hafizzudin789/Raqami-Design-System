@@ -13,6 +13,7 @@ import 'package:design_system/design_system/raqami_assets/raqami_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../design_system/components/design_header.dart';
+import '../design_system/components/design_text_box/amount_text_box.dart';
 import '../design_system/foundation/color_palette.dart';
 import '../design_system/foundation/font_size.dart';
 import '../design_system/themes/theme_provider.dart';
@@ -112,6 +113,10 @@ class _AllComponentsUiState extends State<AllComponentsUi> {
           const Text("Headers", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
           verticalSpaceSmall,
           ..._header,
+
+          const Text("Text box", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
+          verticalSpaceSmall,
+          ..._textBox,
 
           // const Text("Toggle button", style: TextStyle(fontSize: FontSize.xxxl, fontWeight: FontWeight.w600),),
           // verticalSpaceSmall,
@@ -429,6 +434,21 @@ class _AllComponentsUiState extends State<AllComponentsUi> {
       onPressedClose: () {},
     ),
     verticalSpaceXXXLarge,
+  ];
+
+
+  List<Widget> get _textBox => [
+    const AmountTextBox.large(label: "Label Text", amountValue: 0),
+    verticalSpaceRegular,
+    Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: const [
+        AmountTextBox.small(amountValue: 0),
+      ],
+    ),
+    verticalSpaceRegular,
+    // const AmountTextBox.large(label: "Label Text", amountValue: 0),
+    // verticalSpaceRegular,
   ];
   // List<Widget> get _toggleButton => [
   //   PrimaryToggleButton(),
